@@ -1,0 +1,7 @@
+openai>=1.40.0
+neo4j>=5.12.0
+tenacity>=8.2.3
+fastapi>=0.111.0
+uvicorn>=0.30.0
+pydantic>=2.7.0
+PyYAML>=6.0.1

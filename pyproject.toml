@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vmem"
+version = "0.1.0"
+description = "ValueMEM: value-driven memory system"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.40.0",
+  "neo4j>=5.12.0",
+  "tenacity>=8.2.3",
+  "fastapi>=0.111.0",
+  "uvicorn>=0.30.0",
+  "pydantic>=2.7.0",
+  "PyYAML>=6.0.1",
+]

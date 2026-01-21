@@ -1,0 +1,29 @@
+llm:
+  model: gpt-5-mini
+  api_key: ${OPENAI_API_KEY}
+  base_url: null
+  timeout_s: 30
+  max_retries: 2
+embedding:
+  model: text-embedding-3-small
+  api_key: ${OPENAI_API_KEY}
+  base_url: null
+neo4j:
+  uri: bolt://localhost:7687
+  user: neo4j
+  password: neo4j
+  database: neo4j
+retrieval:
+  value_threshold: 0.8
+  top_k: 8
+  candidate_k: 50
+  min_high_value_hits: 3
+  expand_hops: 1
+  expand_limit: 20
+  score_weight_value: 0.6
+  score_weight_similarity: 0.4
+  vector_index_name: memory_embedding_index
+  answer_similarity_threshold: 0.78
+cache:
+  path: vmem_cache.sqlite
+  similarity_threshold: 0.92
