@@ -1,6 +1,4 @@
 import argparse
-
-from vmem.cache import ValueCache
 from vmem.embeddings.openai_embedder import OpenAIEmbedder
 from vmem.graph.neo4j_store import GraphStore
 from vmem.llm.client import LLMClient
@@ -25,12 +23,18 @@ def main() -> None:
     llm = LLMClient(config.llm)
     embedder = OpenAIEmbedder(config.embedding)
     graph = GraphStore(config.neo4j)
-    cache = ValueCache(config.cache)
     graph.ensure_schema()
 
-    pipeline = MemoryPipeline(llm=llm, embedder=embedder, graph=graph, cache=cache)
+    pipeline = MemoryPipeline(
+        llm=llm,
+        embedder=embedder,
+        graph=graph,
+        value_threshold=config.retrieval.value_threshold,
+        vector_index_name=config.retrieval.vector_index_name,
+    )
     for text in SAMPLE_TEXTS:
-        pipeline.ingest_text(text, source="demo")
+        pipeline.ingest_text(text, source="demo", add_vector=True, add_graph=False, immediate=True)
+    pipeline.flush_buffer(source="demo", add_vector=True, add_graph=False)
     print(f"Seeded {len(SAMPLE_TEXTS)} documents")
 
 

@@ -69,6 +69,7 @@ def build_config(config_path: str | None = None) -> ValueMemConfig:
             "score_weight_similarity",
             "vector_index_name",
             "answer_similarity_threshold",
+            "retrieval_mode",
         ],
     )
     cache = _overlay(CacheConfig(), raw.get("cache", {}), ["path", "similarity_threshold"])

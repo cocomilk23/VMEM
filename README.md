@@ -10,10 +10,10 @@ ValueMEM 是面向智能体的价值驱动记忆系统。系统使用单一物�
 - 评分缓存：相同或相似记忆复用历史评分
 
 ## 架构
-1. 输入层：接收对话/文档文本
+1. 输入层：接收对话/文档文本（支持 JSON 对话格式）
 2. 处理层：事实提取 -> 价值评分 + 三元组 -> 向量嵌入
 3. 存储层：Neo4j 统一图谱，关系属性存储记忆文本与价值分数
-4. 检索层：高价值优先 -> 语义排序 -> 辐射扩展
+4. 检索层：实体优先或向量优先（可配置），高价值优先召回
 
 ## 数据模型
 关系类型：`(Entity)-[:MEMORY]->(Entity)`
@@ -33,15 +33,13 @@ pip install -r requirements.txt
 ```
 
 2) 创建并激活虚拟环境（推荐）
-```bash
 python -m venv .venv
-.venv\\Scripts\\activate
-```
+source .venv/bin/activate
+
 
 3) 配置环境变量
-```bash
-copy .env.example .env
-```
+cp .env.example .env
+
 按需修改 `.env` 中的 OpenAI 与 Neo4j 配置。
 
 4) 初始化图谱结构
@@ -73,7 +71,7 @@ python -m vmem.cli --config config.yaml ingest "Alice met the CEO."
 uvicorn vmem.server.app:app --host 0.0.0.0 --port 8000
 ```
 接口：
-- `POST /ingest` `{ "text": "...", "source": "user" }`
+- `POST /ingest` `{ "text": "..." | [{"role":"user","context":"..."}], "source": "user" }`
 - `POST /query` `{ "text": "..." }`
 
 ## 基准与示例脚本
@@ -87,18 +85,23 @@ uvicorn vmem.server.app:app --host 0.0.0.0 --port 8000
 - `VMEM_VALUE_THRESHOLD`：高价值阈值（默认 0.8）
 - `VMEM_TOP_K`：返回结果数量
 - `VMEM_CANDIDATE_K`：候选集规模
-- `VMEM_WEIGHT_VALUE` / `VMEM_WEIGHT_SIM`：价值分数与语义相似度权重
+- `VMEM_RETRIEVAL_MODE`：检索模式（`entity` 或 `vector`）
 - `VMEM_CACHE_PATH`：评分缓存位置
 - `VMEM_CONFIG_PATH`：YAML 配置文件路径
 - `VMEM_LOG_LEVEL`：日志级别
 - `VMEM_VECTOR_INDEX_NAME`：向量索引名称
 - `VMEM_ANSWER_SIM_THRESHOLD`：高价值命中可直接回答的相似度阈值
+ - `VMEM_EMBED_MODEL`：嵌入模型（可用本地路径）
 
 ## 检索策略说明
-1. 向量相似度检索高价值关系（`value_score >= 阈值`）
-2. 命中后辐射扩展关联记忆加入候选集
-3. 若相似度和命中数不足以回答，回退至全图谱向量检索
-4. 价值分数与语义相似度混合排序
+- `entity` 模式（默认）：
+  1. LLM 抽取 query 实体
+  2. 遍历实体相关三元组（高价值优先）
+  3. 计算余弦相似度并过滤
+- `vector` 模式：
+  1. 直接向量检索（高价值优先，未命中则全量）
+
+提示：如需启用 Neo4j 向量索引，请执行 `scripts/vector_index.cypher`。
 
 提示：如需启用 Neo4j 向量索引，请执行 `scripts/vector_index.cypher`。
 
@@ -124,6 +127,7 @@ Vmem/
 - 逻辑双层通过关系属性过滤实现，避免双图谱同步成本
 - 评分缓存使用 sqlite，本地轻量可复用
 - 三元组由 LLM 输出，支持跨领域语义表达
+ - 对话输入支持 JSON，并保留最近 N 轮作为工作记忆
 
 ## 运行测试
 ```bash

@@ -1,4 +1,402 @@
-{
-  "text": "Alice met the CEO during the conference opening ceremony.",
-  "source": "demo"
-}
+[
+  {
+    "role": "user",
+    "context": "My favorite hobby is yoga, and I joined a club in San Francisco."
+  },
+  {
+    "role": "user",
+    "context": "I was hospitalized for diabetes this year and need follow-up visits."
+  },
+  {
+    "role": "assistant",
+    "context": "Interesting—how did that go?"
+  },
+  {
+    "role": "user",
+    "context": "Last summer I went hiking near Miami and twisted my ankle."
+  },
+  {
+    "role": "user",
+    "context": "I had a checkup last month and my blood pressure was high."
+  },
+  {
+    "role": "user",
+    "context": "My younger sister is learning cycling and practices every evening."
+  },
+  {
+    "role": "assistant",
+    "context": "Got it. Thanks for sharing."
+  },
+  {
+    "role": "user",
+    "context": "I found a stray cat named Ivan and adopted it last week."
+  },
+  {
+    "role": "user",
+    "context": "My younger sister is learning swimming and practices every evening."
+  },
+  {
+    "role": "user",
+    "context": "Yesterday I lost my wallet on the bus and had to cancel my bank cards."
+  },
+  {
+    "role": "assistant",
+    "context": "That sounds intense. Are you okay now?"
+  },
+  {
+    "role": "user",
+    "context": "I moved to New York in 2022 for a new job and rented an apartment downtown."
+  },
+  {
+    "role": "user",
+    "context": "I found a stray cat named Daisy and adopted it last week."
+  },
+  {
+    "role": "user",
+    "context": "I was diagnosed with asthma last year, so I take medication daily."
+  },
+  {
+    "role": "assistant",
+    "context": "Interesting—how did that go?"
+  },
+  {
+    "role": "user",
+    "context": "I had dinner with Mason at a pizza restaurant in Portland last weekend."
+  },
+  {
+    "role": "user",
+    "context": "Yesterday I lost my wallet on the bus and had to cancel my bank cards."
+  },
+  {
+    "role": "user",
+    "context": "I had dinner with Ethan at a sandwich restaurant in New York last weekend."
+  },
+  {
+    "role": "assistant",
+    "context": "That sounds intense. Are you okay now?"
+  },
+  {
+    "role": "user",
+    "context": "My favorite hobby is photography, and I joined a club in Seattle."
+  },
+  {
+    "role": "user",
+    "context": "I am allergic to sandwich and always avoid it."
+  },
+  {
+    "role": "user",
+    "context": "I bought a new passport and spilled coffee on it yesterday."
+  },
+  {
+    "role": "assistant",
+    "context": "That sounds intense. Are you okay now?"
+  },
+  {
+    "role": "user",
+    "context": "I was hospitalized for diabetes this year and need follow-up visits."
+  },
+  {
+    "role": "user",
+    "context": "I signed up for a running class and attend every Tuesday."
+  },
+  {
+    "role": "user",
+    "context": "Yesterday I lost my phone on the bus and had to cancel my bank cards."
+  },
+  {
+    "role": "assistant",
+    "context": "Understood. I'll remember that."
+  },
+  {
+    "role": "user",
+    "context": "Last night a flood hit my hometown, and my family had to evacuate."
+  },
+  {
+    "role": "user",
+    "context": "I avoid pizza because it upsets my stomach."
+  },
+  {
+    "role": "user",
+    "context": "I started learning Japanese this year and practice speaking every weekend."
+  },
+  {
+    "role": "assistant",
+    "context": "Interesting—how did that go?"
+  },
+  {
+    "role": "user",
+    "context": "I was diagnosed with hypertension last year, so I take medication daily."
+  },
+  {
+    "role": "user",
+    "context": "I was diagnosed with lactose intolerance last year, so I take medication daily."
+  },
+  {
+    "role": "user",
+    "context": "Last night a flood hit my hometown, and my family had to evacuate."
+  },
+  {
+    "role": "assistant",
+    "context": "Got it. Thanks for sharing."
+  },
+  {
+    "role": "user",
+    "context": "My favorite hobby is cooking, and I joined a club in Lisbon."
+  },
+  {
+    "role": "user",
+    "context": "I bought a new wallet and spilled coffee on it yesterday."
+  },
+  {
+    "role": "user",
+    "context": "I met my coworker Tina at a conference in Atlanta."
+  },
+  {
+    "role": "assistant",
+    "context": "Got it. Thanks for sharing."
+  },
+  {
+    "role": "user",
+    "context": "I am allergic to ramen and always avoid it."
+  },
+  {
+    "role": "user",
+    "context": "I signed up for a hiking class and attend every Tuesday."
+  },
+  {
+    "role": "user",
+    "context": "During a storm yesterday, my neighborhood was evacuated."
+  },
+  {
+    "role": "assistant",
+    "context": "Understood. I'll remember that."
+  },
+  {
+    "role": "user",
+    "context": "I took a photo with Taylor Swift at a concert in San Diego last night."
+  },
+  {
+    "role": "user",
+    "context": "My friend Ivan and I go coding every weekend in Miami."
+  },
+  {
+    "role": "user",
+    "context": "I had dinner with Kevin at a pizza restaurant in Tokyo last weekend."
+  },
+  {
+    "role": "assistant",
+    "context": "That sounds intense. Are you okay now?"
+  },
+  {
+    "role": "user",
+    "context": "I was diagnosed with lactose intolerance last year, so I take medication daily."
+  },
+  {
+    "role": "user",
+    "context": "Yesterday I lost my laptop on the bus and had to cancel my bank cards."
+  },
+  {
+    "role": "user",
+    "context": "I avoid sandwich because it upsets my stomach."
+  },
+  {
+    "role": "assistant",
+    "context": "Interesting—how did that go?"
+  },
+  {
+    "role": "user",
+    "context": "I moved to Atlanta in 2022 for a new job and rented an apartment downtown."
+  },
+  {
+    "role": "user",
+    "context": "Last summer I went hiking near Austin and twisted my ankle."
+  },
+  {
+    "role": "user",
+    "context": "My favorite hobby is coding, and I joined a club in Miami."
+  },
+  {
+    "role": "assistant",
+    "context": "That sounds intense. Are you okay now?"
+  },
+  {
+    "role": "user",
+    "context": "I avoid kebab because it upsets my stomach."
+  },
+  {
+    "role": "user",
+    "context": "My friend Tina and I go hiking every weekend in Denver."
+  },
+  {
+    "role": "user",
+    "context": "My friend Ethan and I go guitar every weekend in Tokyo."
+  },
+  {
+    "role": "assistant",
+    "context": "Understood. I'll remember that."
+  },
+  {
+    "role": "user",
+    "context": "My favorite hobby is swimming, and I joined a club in Miami."
+  },
+  {
+    "role": "user",
+    "context": "My favorite hobby is cycling, and I joined a club in Miami."
+  },
+  {
+    "role": "user",
+    "context": "Two weeks ago I traveled to Chicago and tried salad for the first time."
+  },
+  {
+    "role": "assistant",
+    "context": "Nice! What was the highlight?"
+  },
+  {
+    "role": "user",
+    "context": "I had a checkup last month and my blood pressure was high."
+  },
+  {
+    "role": "user",
+    "context": "Last month I met Adele at a charity event in Tokyo."
+  },
+  {
+    "role": "user",
+    "context": "My younger sister is learning hiking and practices every evening."
+  },
+  {
+    "role": "assistant",
+    "context": "Interesting—how did that go?"
+  },
+  {
+    "role": "user",
+    "context": "I ran a 10K race in Tokyo and finished in under an hour."
+  },
+  {
+    "role": "user",
+    "context": "I was hospitalized for hypertension this year and need follow-up visits."
+  },
+  {
+    "role": "user",
+    "context": "I had dinner with George at a hotpot restaurant in Boston last weekend."
+  },
+  {
+    "role": "assistant",
+    "context": "Understood. I'll remember that."
+  },
+  {
+    "role": "user",
+    "context": "My dad loves sushi but I don't."
+  },
+  {
+    "role": "user",
+    "context": "I had a checkup last month and my blood pressure was high."
+  },
+  {
+    "role": "user",
+    "context": "My dad loves steak but I don't."
+  },
+  {
+    "role": "assistant",
+    "context": "Nice! What was the highlight?"
+  },
+  {
+    "role": "user",
+    "context": "I started learning Japanese this year and practice speaking every weekend."
+  },
+  {
+    "role": "user",
+    "context": "I took a photo with Lionel Messi at a concert in Lisbon last night."
+  },
+  {
+    "role": "user",
+    "context": "I found a stray cat named Daisy and adopted it last week."
+  },
+  {
+    "role": "assistant",
+    "context": "Understood. I'll remember that."
+  },
+  {
+    "role": "user",
+    "context": "I signed up for a painting class and attend every Tuesday."
+  },
+  {
+    "role": "user",
+    "context": "Last month I met Tom Hanks at a charity event in Miami."
+  },
+  {
+    "role": "user",
+    "context": "I was hospitalized for peanut allergy this year and need follow-up visits."
+  },
+  {
+    "role": "assistant",
+    "context": "Nice! What was the highlight?"
+  },
+  {
+    "role": "user",
+    "context": "My friend Ethan and I go painting every weekend in Atlanta."
+  },
+  {
+    "role": "user",
+    "context": "Two weeks ago I traveled to Lisbon and tried ramen for the first time."
+  },
+  {
+    "role": "user",
+    "context": "My dad loves steak but I don't."
+  },
+  {
+    "role": "assistant",
+    "context": "Interesting—how did that go?"
+  },
+  {
+    "role": "user",
+    "context": "I found a stray cat named Quinn and adopted it last week."
+  },
+  {
+    "role": "user",
+    "context": "I found a stray cat named Rita and adopted it last week."
+  },
+  {
+    "role": "user",
+    "context": "Last night a flood hit my hometown, and my family had to evacuate."
+  },
+  {
+    "role": "assistant",
+    "context": "Nice! What was the highlight?"
+  },
+  {
+    "role": "user",
+    "context": "I found a stray cat named Daisy and adopted it last week."
+  },
+  {
+    "role": "user",
+    "context": "My younger sister is learning guitar and practices every evening."
+  },
+  {
+    "role": "user",
+    "context": "I bought a new wallet and spilled coffee on it yesterday."
+  },
+  {
+    "role": "assistant",
+    "context": "Understood. I'll remember that."
+  },
+  {
+    "role": "user",
+    "context": "I bought a new car and spilled coffee on it yesterday."
+  },
+  {
+    "role": "user",
+    "context": "My younger sister is learning swimming and practices every evening."
+  },
+  {
+    "role": "user",
+    "context": "I had a checkup last month and my blood pressure was high."
+  },
+  {
+    "role": "assistant",
+    "context": "That sounds intense. Are you okay now?"
+  },
+  {
+    "role": "user",
+    "context": "My younger sister is learning painting and practices every evening."
+  }
+]

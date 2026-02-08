@@ -1,7 +1,6 @@
 import argparse
 import time
 
-from vmem.cache import ValueCache
 from vmem.embeddings.openai_embedder import OpenAIEmbedder
 from vmem.graph.neo4j_store import GraphStore
 from vmem.llm.client import LLMClient
@@ -27,13 +26,25 @@ def main() -> None:
     llm = LLMClient(config.llm)
     embedder = OpenAIEmbedder(config.embedding)
     graph = GraphStore(config.neo4j)
-    cache = ValueCache(config.cache)
     graph.ensure_schema()
 
-    pipeline = MemoryPipeline(llm=llm, embedder=embedder, graph=graph, cache=cache)
-    pipeline.ingest_text("Alice met the CEO during the conference opening ceremony.", source="bench")
+    pipeline = MemoryPipeline(
+        llm=llm,
+        embedder=embedder,
+        graph=graph,
+        value_threshold=config.retrieval.value_threshold,
+        vector_index_name=config.retrieval.vector_index_name,
+    )
+    pipeline.ingest_text(
+        "Alice met the CEO during the conference opening ceremony.",
+        source="bench",
+        add_vector=True,
+        add_graph=False,
+        immediate=True,
+    )
+    pipeline.flush_buffer(source="bench", add_vector=True, add_graph=False)
 
-    retriever = MemoryRetriever(graph=graph, embedder=embedder, config=config.retrieval)
+    retriever = MemoryRetriever(graph=graph, embedder=embedder, llm=llm, config=config.retrieval)
 
     for _ in range(args.warmup):
         for query in SAMPLE_QUERIES:
